@@ -1,1 +1,109 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="monetag" content="af023649842cabfaa67a1656174aec15">
+<title>Free YouTube Video Downloader - MP4 MP3 4K | VidFetch</title>
+<meta name="description" content="Download YouTube videos free in MP4, MP3, 4K. Supports TikTok, Instagram, Facebook.">
+<script src="https://quge5.com/88/tag.min.js" data-zone="244365" async data-cfasync="false"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:sans-serif;background:#0a0a0f;color:#f0f0f8;min-height:100vh}
+nav{background:#12121a;padding:16px 6%;border-bottom:1px solid #2a2a3d}
+.logo{font-weight:800;font-size:1.3rem;color:#ff3b3b}
+.hero{text-align:center;padding:60px 6% 40px}
+h1{font-size:2.5rem;font-weight:800;margin-bottom:12px}
+h1 span{color:#ff3b3b}
+.sub{color:#8888aa;margin-bottom:32px}
+.box{max-width:680px;margin:0 auto;background:#1a1a26;border:1px solid #2a2a3d;border-radius:16px;padding:24px}
+.row{display:flex;gap:10px}
+input{flex:1;background:#12121a;border:1px solid #2a2a3d;border-radius:10px;color:#f0f0f8;font-size:0.95rem;padding:14px 16px;outline:none}
+button{background:linear-gradient(135deg,#ff3b3b,#ff6b35);border:none;border-radius:10px;color:#fff;font-weight:700;font-size:0.95rem;padding:14px 24px;cursor:pointer}
+#result{margin-top:18px}
+.err{background:rgba(255,59,59,0.1);border:1px solid rgba(255,59,59,0.3);border-radius:8px;padding:12px;color:#ff8080;font-size:0.88rem;text-align:center}
+.spin{width:20px;height:20px;border:2px solid #2a2a3d;border-top-color:#ff3b3b;border-radius:50%;animation:spin 0.7s linear infinite;margin:20px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.vcard{background:#12121a;border:1px solid #2a2a3d;border-radius:12px;overflow:hidden}
+.vinfo{padding:14px;border-bottom:1px solid #2a2a3d}
+.vtitle{font-weight:700;margin-bottom:6px}
+.vmeta{color:#8888aa;font-size:0.82rem;display:flex;gap:12px}
+.fsec{padding:14px}
+.flabel{font-size:0.75rem;color:#8888aa;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px}
+.qrow{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.qbtn{background:#1a1a26;border:1px solid #2a2a3d;border-radius:7px;padding:7px 13px;font-size:0.82rem;font-weight:600;cursor:pointer;color:#8888aa;transition:all 0.18s}
+.qbtn.sel{background:rgba(255,59,59,0.1);border-color:#ff3b3b;color:#f0f0f8}
+.dlbtn{width:100%;background:linear-gradient(135deg,#ff3b3b,#ff6b35);border:none;border-radius:10px;color:#fff;font-weight:700;font-size:1rem;padding:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px}
+.chip{background:#1a1a26;border:1px solid #2a2a3d;border-radius:20px;padding:5px 12px;font-size:0.8rem;color:#8888aa}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;padding:40px 6%}
+.fc{background:#1a1a26;border:1px solid #2a2a3d;border-radius:14px;padding:22px}
+.fi{font-size:1.4rem;margin-bottom:10px}
+.ft{font-weight:700;margin-bottom:6px}
+.fd{color:#8888aa;font-size:0.85rem;line-height:1.6}
+footer{background:#12121a;border-top:1px solid #2a2a3d;padding:24px 6%;text-align:center;color:#555566;font-size:0.8rem}
+</style>
+</head>
+<body>
+<nav><div class="logo">VidFetch</div></nav>
+<div class="hero">
+<h1>Download Any Video<br><span>In Seconds</span></h1>
+<p class="sub">YouTube, TikTok, Instagram, Facebook — Free, Fast, No Watermark</p>
+<div class="box">
+<div class="row">
+<input type="url" id="url" placeholder="Paste YouTube, TikTok, Instagram link...">
+<button onclick="go()">↓ Download</button>
+</div>
+<div id="result"></div>
+</div>
+<div class="chips">
+<div class="chip">▶️ YouTube</div>
+<div class="chip">🎵 TikTok</div>
+<div class="chip">📸 Instagram</div>
+<div class="chip">👤 Facebook</div>
+<div class="chip">+ 50 more</div>
+</div>
+</div>
+<div class="feats">
+<div class="fc"><div class="fi">🚀</div><div class="ft">Lightning Fast</div><div class="fd">Results in seconds. No waiting.</div></div>
+<div class="fc"><div class="fi">🎬</div><div class="ft">4K Quality</div><div class="fd">144p to 4K — best quality available.</div></div>
+<div class="fc"><div class="fi">🔒</div><div class="ft">100% Private</div><div class="fd">No data stored. No tracking.</div></div>
+<div class="fc"><div class="fi">🎵</div><div class="ft">MP3 Audio</div><div class="fd">Extract audio from any video.</div></div>
+</div>
+<footer>© 2026 VidFetch. Free Video Downloader. For personal use only.</footer>
+<script>
+const API='https://web-production-f5910.up.railway.app';
+async function go(){
+  const url=document.getElementById('url').value.trim();
+  const r=document.getElementById('result');
+  if(!url){r.innerHTML='<div class="err">⚠️ Please paste a video URL</div>';return;}
+  r.innerHTML='<div class="spin"></div>';
+  try{
+    const res=await fetch(API+'/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
+    const d=await res.json();
+    if(d.error)throw new Error(d.error);
+    r.innerHTML=`<div class="vcard">
+      <div class="vinfo"><div class="vtitle">${d.title}</div>
+      <div class="vmeta"><span>📺 ${d.channel}</span><span>⏱ ${d.duration}</span></div></div>
+      <div class="fsec"><div class="flabel">Select Quality</div>
+      <div class="qrow">${d.formats.map(f=>`<button class="qbtn ${f.quality==='1080p'?'sel':''}" onclick="selQ(this,'${f.format_id}')" data-fid="${f.format_id}">${f.quality}</button>`).join('')}</div>
+      <button class="dlbtn" onclick="dl('${url}')">⬇️ Download Now</button></div></div>`;
+  }catch(e){r.innerHTML='<div class="err">⚠️ '+e.message+'</div>';}
+}
+function selQ(b,id){document.querySelectorAll('.qbtn').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');}
+async function dl(url){
+  const fid=document.querySelector('.qbtn.sel')?.dataset.fid||'best';
+  const b=document.querySelector('.dlbtn');
+  b.textContent='Preparing...';b.disabled=true;
+  try{
+    const res=await fetch(API+'/download',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,format_id:fid})});
+    const blob=await res.blob();
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='video';a.click();
+    b.textContent='✅ Done!';setTimeout(()=>{b.textContent='⬇️ Download Now';b.disabled=false;},3000);
+  }catch(e){b.textContent='⚠️ Failed';setTimeout(()=>{b.textContent='⬇️ Download Now';b.disabled=false;},3000);}
+}
+document.getElementById('url').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+</script>
+</body>
+</html>
